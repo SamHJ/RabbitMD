@@ -1,0 +1,129 @@
+<div class="page h-screen flex flex-wrap content-center justify-center">
+
+    <div class="auth-nav-header col-auto bg-white mt-0 fixed w-full z-10 top-0"
+    :style="{'background':$store.state.darkTheme?'#030108':'#fff'}">
+
+        <div class="row" style="text-align: -webkit-right;">
+            <!-- right corner vector -->
+            <AuthRightVector />
+        </div>
+
+        <div class="row">
+            <!-- rabbit blue logo -->
+            <RabbitWhite class="rabbit-white" v-if="$store.state.darkTheme"/>
+            <RabbitBlue class="rabbit-colored" v-if="!$store.state.darkTheme"/>
+        </div>
+
+        <div class="row-nav" v-if="!signup_msg && !complete_signup">
+            <!-- nav container -->
+            <div class="absolute h-42 row" style="top: 120px;display: inline-flex;display: grid;
+            grid-template-columns: repeat(2, 1fr);width: auto ">
+
+                <div :class="`column h-42 ${active_tab===0?'bg-light-primary-light':''}`"
+                @click="active_tab=0">
+                    <div class="nav-content-group flex justify-center items-center">
+                        <Driver class="flex-none w-10" :is_active="active_tab===0"/>
+                        <span class="nav-title-text w-22 text-center" :style="{'color':active_tab===0?'#0073C7':'#99ABB8'}">DRIVER</span>
+                    </div>
+                    <div class="bottom-hr" :style="{'border':active_tab===0?'1px solid #0073C7':''}"></div>
+                </div>
+
+                <div :class="`column h-42 ${active_tab===1?'bg-light-primary-light':''}`"
+                @click="active_tab=1">
+                    <div class="nav-content-group flex justify-center items-center">
+                        <Merchant class="flex-none w-10" :is_active="active_tab===1"/>
+                        <span class="nav-title-text w-22 text-center" :style="{'color':active_tab===1?'#0073C7':'#99ABB8'}">MERCHANT</span>
+                    </div>
+                    <div class="bottom-hr" :style="{'border':active_tab===1?'1px solid #0073C7':''}"></div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    
+    <!-- signup form container -->
+    <div v-if="!complete_signup" style="margin:auto;margin-top: 180px;width: 100%;position: absolute;">
+
+        <!-- forms container -->
+        <div class="signup-info-msg-container" v-if="signup_msg">
+            <span class="create-acc-text">Processing Account</span>
+            <span class="signup-info-msg">{{signup_msg}}</span>
+
+            <button type="button" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-light-primary my-2 auth-proceed-btn"
+                @click="complete_signup=true">
+                Proceed
+            </button>
+        </div>
+
+        <div class="forms-container" v-if="!signup_msg">
+            
+            <span class="create-acc-text">Create Your Account</span>
+
+            <!-- nav container for driver -->
+            <div class="nav-content-container" v-if="active_tab===0">
+                <input type="text" placeholder="First Name" class="form-input text-primary rounded w-full text-pink-500" style="margin-top: 1.2rem!important;"/>
+                <input type="text" placeholder="Last Name" class="form-input text-primary rounded w-full text-pink-500" />
+                <input type="number" placeholder="Phone Number" class="form-input text-primary rounded w-full text-pink-500" />
+                <input type="email" placeholder="Email" class="form-input rounded text-primary w-full text-pink-500" />
+                <input type="text" placeholder="Vehicle Plate Number" class="form-input rounded text-primary w-full text-pink-500" />
+            </div>
+
+            <!-- nav container for merchant -->
+            <div class="nav-content-container" v-if="active_tab===1">
+                <select class="form-select text-primary rounded w-full text-pink-500" style="margin-top: 1.2rem!important;">
+                    <option disabled selected>Outlet Name</option>
+                    <option v-for="(n,i) in outlet_names" :value="n" :key="i">{{n}}</option>
+                </select>
+                <input type="text" placeholder="Rider Name" class="form-input text-primary rounded w-full text-pink-500" />
+                <input type="number" placeholder="Phone Number" class="form-input text-primary rounded w-full text-pink-500" />
+                <input type="email" placeholder="Email" class="form-input rounded text-primary w-full text-pink-500" />
+                <select class="form-select rounded text-primary w-full text-pink-500">
+                    <option disabled selected>Outlet Location</option>
+                    <option v-for="(l,i) in outlet_locations" :value="l" :key="i">{{l}}</option>
+                </select>
+            </div>
+
+            <!-- bottom content -->
+            <div class="bottom-content">
+                <label class="inline-flex items-center">
+                    <input type="checkbox" class="form-checkbox rounded text-primary border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-offset-0 focus:ring-indigo-200 focus:ring-opacity-50" checked="">
+                    <span class="consent-text ml-2">I have read and understand the <span><a href="https://rabbit.com.ng/terms" target="_blank"><strong>terms</strong> and <strong>conditions</strong></a></span> </span>
+                </label>
+        
+                <button type="button" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-light-primary my-2 auth-proceed-btn"
+                @click="signup_msg='We are Processing your account, please check back within the next one hour'">
+                    Proceed
+                </button>
+        
+            </div>
+
+        </div>
+
+        <span class="signin-text">Have an Account already? <strong><router-link to="/login">Sign In</router-link></strong></span>
+
+    </div>
+
+    <!-- complete signup container -->
+    <div class="forms-container" v-if="complete_signup" style="margin:auto;margin-top: 180px;width: 100%;position: absolute;">
+       
+        <span class="create-acc-text" style="text-align: center;">Complete Account Registration</span>
+
+        <div class="nav-content-container nav-form-password grid-flow-col gap-4">
+
+            <input type="text" placeholder="Registration Code" class="form-input text-primary rounded w-full text-pink-500" />
+            <input type="password" placeholder="Create Password" class="form-input text-primary rounded w-full text-pink-500" />
+            <input type="password" placeholder="Confirm Password" class="form-input text-primary rounded w-full text-pink-500" />
+
+            <button type="button" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-light-primary my-2 auth-proceed-btn"
+            style="margin-top: 1.5rem;" @click="signUp">
+                Proceed
+            </button>
+
+            <span class="signin-text-password">Have an Account already? <strong><router-link to="/login">Sign In</router-link></strong></span>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,108 @@
+.rabbit-colored{
+    width: 50%;
+    height: 40px;
+    display: block;
+    margin: auto;
+    margin-top: -3rem;
+}
+.row-nav{
+    justify-content: center;
+	display: flex;
+    height: 60px;
+    width: 100%;
+}
+.rabbit-white{
+    width: 50%;
+    margin: auto;
+    margin-top: -7.5rem;
+}
+.column{
+    flex-flow: column;
+    display: flex;
+    justify-content: center;
+    margin: 6px;
+}
+.signup-info-msg-container,.forms-container{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin: auto;
+    max-width: 296.4px;
+}
+.signup-info-msg-container{
+    margin-bottom: 10rem;
+}
+.nav-content-group{
+    padding: .5rem;
+}
+.nav-title-text{
+    font-weight: bold;
+}
+.create-acc-text{
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 23px;
+    color: #335670; 
+}
+.nav-content-container > input{
+    border: 1px solid #668194;
+    border-radius: 5px;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    height: 43px;
+    color:#668194;
+    background-color: transparent;
+}
+.nav-content-container >input:nth-child(n+2){
+    margin-top: 1.3rem;
+}
+.nav-content-container >select{
+    margin-top: 1.3rem;
+    height: 43px;
+    color:#668194;
+    background-color: transparent;
+}
+.bottom-content{
+    margin-top: 1.3rem;
+}
+.consent-text{
+    line-height: 19px;
+    color: #335670;
+}
+.signin-text{
+    margin: auto;
+    display: block;
+    text-align: center;
+    color: #335670;
+    margin-top: 1.3rem;
+    margin-bottom: 2rem;
+}
+.signin-text-password{
+    display: block;
+    text-align: center;
+    color: #335670;
+    margin-top: 2rem;
+}
+.auth-proceed-btn{
+    box-shadow: 0px 5px 10px rgba(0, 115, 199, 0.3);
+    border-radius: 5px;
+    margin-top: 1.3rem;
+    height: 50px;
+}
+button:focus {
+    outline: 0 !important;
+    outline: none !important;
+    box-shadow: none;
+    -webkit-tap-highlight-color: #0073C7 !important;
+}
+.signup-info-msg{
+    color: #335670;
+}
+.nav-form-password{
+    margin-top: 2rem!important;
+}
+.auth-nav-header{
+    width: 100%;
+    position: fixed;
+    height: 180px;
+}

@@ -1,0 +1,51 @@
+<div class="page h-screen flex flex-wrap content-center justify-center">
+
+    <div class="center-right-ellipse"></div>
+
+    <HeaderBar active="home"/>
+
+    <div class="srollable-contents">
+
+        <div class="row next-job-timer-container">
+            <span class="next-job-text">Next Job</span>
+            <span class="next-job-timer"><Timer class="timer-vector" :fill="'#EB001B'"/> 00:59:22</span>
+        </div>
+
+        <div class="col card-container">
+            
+            <RouteIndicator />
+
+            <div class="card-thick-hr"></div>
+            <div class="passengers-indicator-container">
+                <span class="passengers-text" style="font-size:16px">Passengers</span>
+
+                <div class="passenger-item" 
+                v-for="p in passengers"
+                :key="p.id">
+                    <div class="slim-hr"></div>
+                    <div class="row" style="justify-content: space-between;">
+                        <img class="p-avatar" :src="p.image">
+                        <div class="name-status-container">
+                            <span class="p-name">{{p.name}}</span>
+                            <div class="passengers-container">
+                                <div class="passengers-indicator"
+                                :style="{'background':p.status==='Pending'?'#FCCE58':''}"></div>
+                                <span class="passengers-text"
+                                :style="{'color':p.status==='Pending'?'#FCCE58':''}">{{p.status}}</span>
+                            </div>
+                        </div>
+                        <div class="trip-btn">End Trip</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row next-job-timer-container" style="margin-top: 2rem;margin-bottom: 2rem;">
+            <span class="next-job-text">Future Trip</span>
+            <span class="next-job-timer njt-future"><Timer class="timer-vector" :fill="'#335670'"/> 03:00:43</span>
+        </div>
+
+    </div>
+
+</div>

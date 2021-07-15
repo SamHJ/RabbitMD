@@ -1,0 +1,127 @@
+.next-job-text{
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    color: #335670;
+}
+.next-job-timer{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19px;
+    color: #EB001B;
+    display: inline-flex;
+    align-items: center;
+}
+.njt-future{
+    color: #335670!important;
+}
+.srollable-contents{
+    position: absolute;
+    margin-top: 190px;
+    width: 100%;
+}
+.next-job-timer-container{
+    width: -webkit-fill-available;
+    display: inline-flex;
+    justify-content: space-between;
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+}
+.timer-vector{
+    margin-right: .3rem;
+}
+.card-container{
+    width: -webkit-fill-available;
+    justify-content: space-between;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    margin-top: .5rem;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 8px rgba(0, 115, 199, 0.15);
+    border-radius: 5px;
+    padding: 13px;
+}
+.card-thick-hr{
+    border: .5px solid #99ABB8;
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+}
+.passengers-text{
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 19px;
+    color: #335670;
+}
+.passengers-indicator{
+    width: 8px;
+    height: 8px;
+    left: 38px;
+    top: 143px;
+    background: #668194;
+    border-radius: 5rem;
+    align-self: center;
+    margin-right: .5rem;
+}
+.passengers-text{
+    color:#668194;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 13px;
+    align-self: center;
+}
+.passengers-container{
+    display: flex;
+}
+.passenger-item{
+    margin: .5rem;
+    margin-top: 1rem;
+}
+.slim-hr{
+    border: .4px solid #99ABB8;
+    margin-bottom: .5rem;
+}
+.p-avatar{
+    width: 38px;
+    height: 38px;
+}
+.name-status-container{
+    position: absolute;
+    left: 5.5rem;
+}
+.p-name{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #335670;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    width: calc(100%);
+}
+.row{
+    display: flex;
+}
+.trip-btn{
+    font-size: 14px;
+    width: 70px;
+    color: white;
+    top: 18px;
+    background: #EB001B;
+    box-shadow: 0px 3px 6px rgba(235, 0, 27, 0.1);
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 1.2rem;
+}
+.center-right-ellipse{
+    position: fixed;
+    width: 137px;
+    height: 137px;
+    right: -3rem;
+    z-index: -1;
+    top: 300px;
+    background: #f1f7fc;
+    border-radius: 10rem;
+}

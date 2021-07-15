@@ -1,0 +1,9 @@
+<div :class="`bg-light-light dark:bg-dark-dark overflow-hidden w-screen h-screen overflow-y-scroll`">
+    <router-view v-slot="{ Component, route }">
+        <transition
+        :enter-active-class="route.meta.enterClass"
+        :leave-active-class="route.meta.leaveClass">
+            <component :is="Component" :key="route.path"/>
+        </transition>
+    </router-view>
+</div>

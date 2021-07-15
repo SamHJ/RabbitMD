@@ -1,0 +1,97 @@
+.route-indicator > .row{
+    display: flex;
+}
+.route-indicator >>> .col-1{
+    width: 10%;
+    display: grid;
+}
+.route-indicator >>> .col-2{
+    width: 90%;
+    display: grid;
+}
+.indicator-circle{
+    width: 13px;
+    height: 13px;
+    border: 4px solid #335670;
+    border-radius: 5rem;
+    margin-left: -.02rem;
+}
+.indicator-vertical-line{
+    width: 0px;
+    height: 50px;
+    border: 1px solid #335670;
+    margin-left: .3rem;
+}
+.location-indicator{
+    margin-left: -.1rem;
+    margin-top: -.1rem;
+}
+.passengers-text{
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 19px;
+    color: #335670;
+}
+.location-from{
+    display:grid;
+}
+.location-to{
+    display:grid;
+    align-self: end;
+    margin-top: 1rem;
+}
+.slt1{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #335670;
+}
+.slt2{
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+    color: #668194;
+}
+.bus-stops-indicator{
+    width: 8px;
+    height: 8px;
+    left: 38px;
+    top: 143px;
+    background: #EB001B;
+    border-radius: 5rem;
+    align-self: center;
+    margin-right: .5rem;
+}
+.passengers-indicator{
+    width: 8px;
+    height: 8px;
+    left: 38px;
+    top: 143px;
+    background: #668194;
+    border-radius: 5rem;
+    align-self: center;
+    margin-right: .5rem;
+}
+.passengers-text{
+    color:#668194;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 13px;
+    align-self: center;
+}
+.stops-text{
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 13px;
+    color: #EB001B;
+    align-self: center;
+}
+.bus-stops-container,.passengers-container{
+    display: flex;
+}
+.bus-stops-passengers-container{
+    display: flex;
+}
+.row{
+    display: flex;
+}

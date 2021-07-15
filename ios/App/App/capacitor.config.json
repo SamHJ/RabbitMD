@@ -1,0 +1,6 @@
+{
+	"appId": "com.roqsoft.eduroqworkers",
+	"appName": "eduroqworkers",
+	"webDir": "dist",
+	"bundledWebRuntime": false
+}

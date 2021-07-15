@@ -1,0 +1,77 @@
+.srollable-contents{
+    position: absolute;
+    margin-top: 180px;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    display: grid;
+}
+.center-right-ellipse{
+    position: fixed;
+    width: 137px;
+    height: 137px;
+    right: -3rem;
+    z-index: -1;
+    top: 300px;
+    background: #f1f7fc;
+    border-radius: 10rem;
+}
+.withdraw-section > input{
+    border: 1px solid #668194;
+    border-radius: 5px;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    height: 43px;
+    color:#668194;
+    background-color: transparent;
+}
+.withdraw-section >input:nth-child(n+2){
+    margin-top: 1.3rem;
+}
+.withdraw-section >select{
+    margin-top: 1.3rem;
+    height: 43px;
+    color:#668194;
+    background-color: transparent;
+}
+.withdraw-section{
+    max-width: 296.4px;
+    display: block;
+    margin: auto;
+}
+.wallet-section-title{
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 23px;
+    color: #335670;
+}
+.withdraw-proceed-btn{
+    box-shadow: 0px 5px 10px rgba(0, 115, 199, 0.3);
+    border-radius: 5px;
+    margin-top: 1.3rem;
+    height: 50px;
+}
+.history-item-hr{
+    border: 0.5px solid #99ABB8;
+    width: 100%;
+    position: absolute;
+}
+.history-item{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+.history-date{
+    text-align: left;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #335670;
+}
+.history-amount{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #0073C7;
+}

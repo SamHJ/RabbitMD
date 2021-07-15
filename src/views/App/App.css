@@ -1,0 +1,18 @@
+:root {
+  --animate-duration: 800ms;
+  --animate-delay: 0.9s;
+}
+.page{
+  width: 100%;
+  position: fixed;
+  overflow-y: scroll;
+}
+.leaveClass{
+  filter: blur(1px);
+  opacity: 0.4;
+}
+
+#app{
+  overflow: hidden;
+  width: 100vw
+}

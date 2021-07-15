@@ -1,0 +1,47 @@
+<div class="dash-top-header col-auto bg-white mt-0 fixed w-full z-10 top-0">
+    <div class="top-ellipse" v-if="active!=='eventinfo'"></div>
+
+    <SideBar v-if="showNav" @closeNav="closeNav"/>
+
+    <div class="row action-buttons">
+        <NavigationToggler @click="openNav"/>
+        <QRCode class="qr-code-vector" v-if="active!=='profile'"/>
+        <Notification v-if="active!=='profile'"/>
+    </div>
+
+    <div v-if="showHeaderSubSection('with_balance')">
+        <span class="wallet-balance">₦ 5,300.00</span>
+        <span class="wallet-balance-text">Wallet Balance</span>
+    </div>
+
+    <div v-if="showHeaderSubSection('history')">
+        <span class="history-text">History</span>
+        <div class="history-thick-hr"></div>
+    </div>
+
+    <div class="row-nav" v-if="showHeaderSubSection('merchanthome')">
+        <!-- nav container -->
+        <div class="h-42 row-grid-container">
+
+            <div :class="`column h-42 ${active_tab===0?'bg-light-primary-light':''}`"
+            @click="setActiveTab(0)">
+                <div class="nav-content-group flex justify-center items-center">
+                    <span class="nav-title-text w-22 text-center" :style="{'color':active_tab===0?'#0073C7':'#99ABB8'}">PICK UP</span>
+                    <span :class="`item-count-container ${active_tab===0?'count-active':'count-inactive'}`">5</span>
+                </div>
+                <div class="bottom-hr" :style="{'border':active_tab===0?'1px solid #0073C7':''}"></div>
+            </div>
+
+            <div :class="`column h-42 ${active_tab===1?'bg-light-primary-light':''}`"
+            @click="setActiveTab(1)">
+                <div class="nav-content-group flex justify-center items-center">
+                    <span class="nav-title-text w-22 text-center" :style="{'color':active_tab===1?'#0073C7':'#99ABB8'}">DELIVERY</span>
+                    <span :class="`item-count-container ${active_tab===1?'count-active':'count-inactive'}`">5</span>
+                </div>
+                <div class="bottom-hr" :style="{'border':active_tab===1?'1px solid #0073C7':''}"></div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,81 @@
+.srollable-contents{
+    position: absolute;
+    margin-top: 110px;
+    width: 100%;
+    overflow-x: hidden;
+}
+.center-right-ellipse{
+    position: fixed;
+    width: 137px;
+    height: 137px;
+    right: -3rem;
+    z-index: -1;
+    top: 300px;
+    background: #f1f7fc;
+    border-radius: 10rem;
+}
+.profile-item-hr{
+    border: 0.5px solid #99ABB8;
+    width: 100%;
+    margin-top: 1rem;
+}
+.profile-avatar{
+    width: 110px;
+    height: 110px;
+    border-radius: 10px;
+    margin: auto;
+}
+.user-vehicle{
+    margin: auto;
+    margin-top: -2rem;
+    display: block;
+    padding-left: 5rem;
+}
+.user-name{
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    color: #414141;
+}
+.user-location{
+    margin-top: .5rem;
+    text-align: center;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+}
+.profile-item{
+    display: grid;
+    margin: 2rem;
+}
+.prop-title{
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 16px;
+    color: #7B7B7B;
+}
+.prop-value{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #414141;
+    margin-top: 1rem;
+}
+.nav-link-logout{
+    color: rgb(235, 0, 27);
+    font-size: 16px;
+    line-height: 19px;
+    margin-left: .5rem;
+    height: 24px;
+    padding-top: .25rem;
+    bottom: 2rem;
+}
+.link-item{
+    display: flex;
+    margin-bottom: 3rem;
+    margin: 2rem;
+    margin-top: 3rem;
+}

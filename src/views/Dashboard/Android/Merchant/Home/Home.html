@@ -1,0 +1,65 @@
+<div class="page h-screen flex flex-wrap content-center justify-center">
+
+    <div class="center-right-ellipse"></div>
+
+    <HeaderBar active="merchanthome" @newTab="changeTab"/>
+
+    <div class="srollable-contents" v-if="active_tab==0">
+
+        <div class="row next-job-timer-container">
+            <span class="next-job-text">Next Pick Up</span>
+            <span class="next-job-timer"><Timer class="timer-vector" :fill="'#EB001B'"/> 00:59:22</span>
+        </div>
+
+        <div class="col card-container">
+            <RouteIndicatorDriver @click="$router.push('/merchant/event-info')"/>
+        </div>
+
+        <div class="row next-job-timer-container" style="margin-top: 2rem;margin-bottom: 2rem;">
+            <span class="next-job-text">Upcoming Pick Up</span>
+            <span class="next-job-timer njt-future"><Timer class="timer-vector" :fill="'#335670'"/> 03:00:43</span>
+        </div>
+
+
+        <div v-for="(n,i) in 10" :key="i">
+            <div class="row next-job-timer-container" style="margin-top: 2rem;justify-content: flex-end;"
+            v-if="i!==0">
+                <span class="next-job-timer njt-future"><Timer class="timer-vector" :fill="'#335670'"/> 03:00:43</span>
+            </div>
+            <div class="col card-container">
+                <RouteIndicatorDriver @click="$router.push('/merchant/event-info')"/>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="srollable-contents" v-if="active_tab==1">
+
+        <div class="row next-job-timer-container">
+            <span class="next-job-text">Next Delivery</span>
+            <span class="next-job-timer"><Timer class="timer-vector" :fill="'#EB001B'"/> 00:59:22</span>
+        </div>
+
+        <div class="col card-container">
+            <RouteIndicatorDriver @click="$router.push('/merchant/event-info')"/>
+        </div>
+
+        <div class="row next-job-timer-container" style="margin-top: 2rem;margin-bottom: 2rem;">
+            <span class="next-job-text">Upcoming Delivery</span>
+            <span class="next-job-timer njt-future"><Timer class="timer-vector" :fill="'#335670'"/> 03:00:43</span>
+        </div>
+
+
+        <div v-for="(n,i) in 10" :key="i">
+            <div class="row next-job-timer-container" style="margin-top: 2rem;justify-content: flex-end;"
+            v-if="i!==0">
+                <span class="next-job-timer njt-future"><Timer class="timer-vector" :fill="'#335670'"/> 03:00:43</span>
+            </div>
+            <div class="col card-container">
+                <RouteIndicatorDriver @click="$router.push('/merchant/event-info')"/>
+            </div>
+        </div>
+
+    </div>
+
+</div>

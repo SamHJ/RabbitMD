@@ -1,0 +1,35 @@
+.srollable-contents{
+    position: absolute;
+    margin-top: 180px;
+    width: 100%;
+    overflow-x: hidden;
+}
+.center-right-ellipse{
+    position: fixed;
+    width: 137px;
+    height: 137px;
+    right: -3rem;
+    z-index: -1;
+    top: 300px;
+    background: #f1f7fc;
+    border-radius: 10rem;
+}
+.history-route-item{
+    margin: 2rem;
+}
+.history-item-hr{
+    border: 0.5px solid #99ABB8;
+    width: 100%;
+    position: absolute;
+    margin-top: 1rem;
+}
+.history-item-date{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 13px;
+    color: #668194;
+    position: absolute;
+    margin-top: -12%;
+    right: 1rem;
+}

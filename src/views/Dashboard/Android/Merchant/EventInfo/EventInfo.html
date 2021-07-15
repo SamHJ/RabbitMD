@@ -1,0 +1,51 @@
+<div class="page h-screen flex flex-wrap content-center justify-center">
+
+    <HeaderBar active="eventinfo" class="event-info-header"/>
+
+    <div class="srollable-contents">
+        <div class="map-container">
+            <!-- <Location3 style="margin: auto;"/> -->
+            <img src="/assets/images/direction.png" class="direction-img">
+            <!-- <Location4 /> -->
+        </div>
+    </div>
+
+
+    <div class="bottom-content" v-if="arrived">
+        <div style="display:flex">
+            <Location />
+            <span class="location-text">Lekki/Epe expressway, Lagos</span>
+            <span class="event-category">Category: Electronics</span>
+        </div>
+        <div class="call-sender-container">
+            <div style="display:flex;width: 150%;">
+                <img class="p-avatar" src="/assets/images/avatars/a1.png">
+                <span class="sender-name">James Brown <span style="font-style: italic;">(Sender)</span></span>
+            </div>
+            <div class="call-container">
+                <Call />
+            </div>
+        </div>
+        <div class="arrived-btn"
+        @click="arrived = !arrived">Arrived</div>
+    </div>
+
+    <div class="bottom-content" v-if="!arrived">
+        <div style="display:flex">
+            <Location />
+            <span class="location-text">Yaba Bus Stop</span>
+        </div>
+        <div class="call-sender-container">
+            <div style="display:flex;width: 150%;">
+                <img class="p-avatar" src="/assets/images/avatars/avatar00.png">
+                <span class="sender-name">Bosun Ajadi <span style="font-style: italic;">(Driver)</span></span>
+            </div>
+            <div class="call-container">
+                <Call />
+            </div>
+        </div>
+        <div class="arrived-btn" style="background:#EB001B"
+        @click="$router.push('/merchant/task-completed')">End Delivery</div>
+    </div>
+
+</div>

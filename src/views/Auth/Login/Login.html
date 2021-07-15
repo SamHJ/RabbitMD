@@ -1,0 +1,80 @@
+<div class="page h-screen flex flex-wrap content-center justify-center">
+
+    <div class="auth-nav-header col-auto bg-white mt-0 fixed w-full z-10 top-0"
+    :style="{'background':$store.state.darkTheme?'#030108':'#fff'}">
+
+        <div class="row" style="text-align: -webkit-right;">
+            <!-- right corner vector -->
+            <AuthRightVector />
+        </div>
+
+        <div class="row">
+            <!-- rabbit blue logo -->
+            <RabbitWhite class="rabbit-white" v-if="$store.state.darkTheme"/>
+            <RabbitBlue class="rabbit-colored" v-if="!$store.state.darkTheme"/>
+        </div>
+
+        <div class="row-nav">
+            <!-- nav container -->
+            <div class="absolute h-42 row" style="top: 120px;display: inline-flex;display: grid;
+            grid-template-columns: repeat(2, 1fr);width: auto ">
+
+                <div :class="`column h-42 ${active_tab===0?'bg-light-primary-light':''}`"
+                @click="active_tab=0">
+                    <div class="nav-content-group flex justify-center items-center">
+                        <Driver class="flex-none w-10" :is_active="active_tab===0"/>
+                        <span class="nav-title-text w-22 text-center" :style="{'color':active_tab===0?'#0073C7':'#99ABB8'}">DRIVER</span>
+                    </div>
+                    <div class="bottom-hr" :style="{'border':active_tab===0?'1px solid #0073C7':''}"></div>
+                </div>
+
+                <div :class="`column h-42 ${active_tab===1?'bg-light-primary-light':''}`"
+                @click="active_tab=1">
+                    <div class="nav-content-group flex justify-center items-center">
+                        <Merchant class="flex-none w-10" :is_active="active_tab===1"/>
+                        <span class="nav-title-text w-22 text-center" :style="{'color':active_tab===1?'#0073C7':'#99ABB8'}">MERCHANT</span>
+                    </div>
+                    <div class="bottom-hr" :style="{'border':active_tab===1?'1px solid #0073C7':''}"></div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    
+    <!-- signup form container -->
+    <div style="margin:auto;margin-top: 180px;width: 100%;position: absolute;">
+
+        <div class="forms-container">
+            
+            <span class="create-acc-text">Login To Your Account</span>
+
+            <!-- nav container for driver -->
+            <div class="nav-content-container" v-if="active_tab===0">
+                <input type="text" placeholder="Enter Driver-ID" class="form-input text-primary rounded w-full text-pink-500" style="margin-top: 1.2rem!important;"/>
+                <input type="text" placeholder="Password" class="form-input text-primary rounded w-full text-pink-500" />
+            </div>
+
+            <!-- nav container for merchant -->
+            <div class="nav-content-container" v-if="active_tab===1">
+                <input type="text" placeholder="Enter Merchant-ID" class="form-input text-primary rounded w-full text-pink-500" style="margin-top: 1.2rem!important;"/>
+                <input type="text" placeholder="Password" class="form-input text-primary rounded w-full text-pink-500" />
+            </div>
+
+            <!-- bottom content -->
+            <div class="bottom-content">
+        
+                <button type="button" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-light-primary my-2 auth-proceed-btn"
+                @click="signIn">
+                    Sign In
+                </button>
+        
+            </div>
+
+        </div>
+
+        <span class="signin-text">Don't have an account? <strong><router-link to="/signup">Sign Up</router-link></strong></span>
+
+    </div>
+
+</div>

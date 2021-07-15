@@ -1,0 +1,16 @@
+<div class="page h-screen flex flex-wrap content-center justify-center">
+
+    <div class="center-right-ellipse"></div>
+
+    <HeaderBar active="history"/>
+
+    <div class="srollable-contents">
+        <div class="history-route-item"
+        v-for="n in 10" :key="n">
+            <RouteIndicator />
+            <span class="history-item-date">Today</span>
+            <div class="history-item-hr"></div>
+        </div>
+    </div>
+
+</div>

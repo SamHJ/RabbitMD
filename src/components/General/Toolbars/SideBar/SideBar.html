@@ -1,0 +1,33 @@
+<div id="sideBar" class="sidenav">
+    <div class="nav-header-content">
+        <div class="profile-data">
+            <img src="/assets/images/avatars/profile_avatar.png" 
+            class="profile-avatar"/>
+            <div class="user-info-container">
+                <span class="nav-user-name">Bosun</span>
+                <span class="view-profile-link" @click="navigate(`/${status==='merchant'?'merchant':'driver'}/profile`)">View Profile</span>
+            </div>
+        </div>
+        <div class="sidebar-hr"></div>
+    </div>
+    <div class="nav-links-container">
+        <div class="link-item">
+            <Home />
+            <span class="nav-link" @click="navigate(`/${status==='merchant'?'merchant':'driver'}`)">Home</span>
+        </div>
+        <div class="link-item">
+            <History />
+            <span class="nav-link" @click="navigate(`/${status==='merchant'?'merchant':'driver'}/history`)">History</span>
+        </div>
+        <div class="link-item"
+        v-if="status==='driver'">
+            <Wallet />
+            <span class="nav-link" @click="navigate('/driver/wallet')">Wallet</span>
+        </div>
+    </div>
+    <div class="link-item" style="align-items: center;position: absolute;bottom: 2rem;">
+        <Logout />
+        <span class="nav-link-logout" @click="navigate('/login')">Log Out</span>
+    </div>
+</div>
+<div class="sidenav-overlay" @click="$emit('closeNav')"></div>

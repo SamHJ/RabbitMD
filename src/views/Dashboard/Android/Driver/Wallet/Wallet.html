@@ -1,0 +1,41 @@
+<div class="page h-screen flex flex-wrap content-center justify-center">
+
+    <div class="center-right-ellipse"></div>
+
+    <HeaderBar active="wallet"/>
+
+    <div class="srollable-contents">
+
+        <div class="withdraw-section">
+            <span class="wallet-section-title">Withdraw Money</span>
+            <input type="number" placeholder="Enter Amount" class="form-input text-primary rounded w-full text-pink-500" />
+            <input type="number" placeholder="Enter Account Number" class="form-input rounded text-primary w-full text-pink-500" />
+            <select class="form-select rounded text-primary w-full text-pink-500">
+                <option disabled selected>Select Bank</option>
+                <option v-for="(b,i) in banks" :value="b" :key="i">{{b}}</option>
+            </select>
+            <button type="button" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-light-primary my-2 withdraw-proceed-btn">
+                Proceed
+            </button>
+        </div>
+
+        <div style="margin-bottom: 2rem;margin-top: 1rem;">
+            <div class="withdraw-section">
+
+                <span class="wallet-section-title">Payment History</span>
+
+                <div class="history-item-hr" style="left:0;margin-top: .5rem;position: unset;"></div>
+                
+                <div class="history-item" v-for="(h,i) in history"
+                :key="i">
+                    <span class="history-date">{{h.date}}</span>
+                    <span class="history-amount" :style="{'color':!h.status?'#EB001B':''}">#{{h.amount}}</span>
+                    <div class="history-item-hr" style="margin-top: 1.5rem;"></div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,49 @@
+<div class="page h-screen flex flex-wrap content-center justify-center">
+
+    <div class="center-right-ellipse"></div>
+
+    <HeaderBar active="profile" style="height:110px"/>
+
+    <div class="srollable-contents">
+        <div>
+            <img src="/assets/images/avatars/profile_avatar.png" 
+                class="profile-avatar"/>
+            <img src="/assets/images/avatars/coaster_bus.png" 
+            class="user-vehicle"/>
+        </div>
+        <div style="display: grid;margin-top: 1rem;">
+            <span class="user-name">Ajadi Bosun</span>
+            <span class="user-location"><Location2 style="position: absolute;
+                margin: auto;display: inline-flex;margin-left: -1rem;"/> Lagos, Nigeria</span>
+        </div>
+        <div>
+            <div class="profile-item">
+                <span class="prop-title">Username</span>
+                <span class="prop-value">Bosun</span>
+                <div class="profile-item-hr"></div>
+            </div>
+            <div class="profile-item">
+                <span class="prop-title">Phone Number</span>
+                <span class="prop-value">08185654614</span>
+                <div class="profile-item-hr"></div>
+            </div>
+            <div class="profile-item">
+                <span class="prop-title">Email</span>
+                <span class="prop-value">Ajadibosun12@gmail.com</span>
+                <div class="profile-item-hr"></div>
+            </div>
+            <div class="profile-item">
+                <span class="prop-title">Vehicle Type</span>
+                <span class="prop-value">Toyata Quantum 2019</span>
+                <div class="profile-item-hr"></div>
+            </div>
+        </div>
+
+        <div class="link-item">
+            <Logout />
+            <span class="nav-link-logout" @click="$router.push('/login')">Log Out</span>
+        </div>
+        
+    </div>
+
+</div>
