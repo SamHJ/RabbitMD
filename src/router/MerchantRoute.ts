@@ -52,6 +52,15 @@ export const MerchantRoute = [
           leaveClass: "animate__animated animate__fadeOutLeft"
         },
         component: () => import(/* webpackChunkName: 'general'*/"@/views/Dashboard/Android/Merchant/TaskCompleted/index.vue")
+      },
+      {
+        path: "/merchant/wallet",
+        name: "merchantwallet",
+        meta:{
+          enterClass: "animate__animated animate__fadeInRight",
+          leaveClass: "animate__animated animate__fadeOutLeft"
+        },
+        component: () => import(/* webpackChunkName: 'general'*/"@/views/Dashboard/Android/Merchant/Wallet/index.vue")
       }
     ]
   }

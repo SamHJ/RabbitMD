@@ -1,6 +1,6 @@
 {
-	"appId": "com.roqsoft.roqytok",
-	"appName": "RoqyTok",
+	"appId": "com.roqsoft.rabbit",
+	"appName": "Rabbit",
 	"webDir": "dist",
 	"bundledWebRuntime": false
 }

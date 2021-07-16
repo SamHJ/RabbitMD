@@ -2,6 +2,7 @@
  * Contains app-wide re-usable functions
  */
  import { store } from "@/store";
+ import { StatusBar, Style } from '@capacitor/status-bar';
 
 export const asyncRequest = async (
     url: string,
@@ -39,7 +40,7 @@ export const asyncRequest = async (
       });
 }
 
-export const changeTheme = (mode: boolean,change=false): void => {
+export const changeTheme = async(mode: boolean,change=false) => {
   //changes app theme
   const domElem = document.documentElement;
   if (mode) {
@@ -50,6 +51,12 @@ export const changeTheme = (mode: boolean,change=false): void => {
   
   if(change){
     store.dispatch('changeTheme')
+  }
+
+  if(store.state.darkTheme){
+    await StatusBar.setStyle({ style: Style.Dark });
+  }else{
+    await StatusBar.setStyle({ style: Style.Light });
   }
 
 };

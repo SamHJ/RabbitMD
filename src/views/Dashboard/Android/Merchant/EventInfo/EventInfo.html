@@ -11,7 +11,8 @@
     </div>
 
 
-    <div class="bottom-content" v-if="arrived">
+    <div class="bottom-content" v-if="arrived"
+    :style="{'background':$store.state.darkTheme?'#030108':''}">
         <div style="display:flex">
             <Location />
             <span class="location-text">Lekki/Epe expressway, Lagos</span>
@@ -30,7 +31,8 @@
         @click="arrived = !arrived">Arrived</div>
     </div>
 
-    <div class="bottom-content" v-if="!arrived">
+    <div class="bottom-content" v-if="!arrived"
+    :style="{'background':$store.state.darkTheme?'#030108':''}">
         <div style="display:flex">
             <Location />
             <span class="location-text">Yaba Bus Stop</span>

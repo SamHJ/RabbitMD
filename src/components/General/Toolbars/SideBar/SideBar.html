@@ -1,10 +1,13 @@
-<div id="sideBar" class="sidenav">
+<div id="sideBar" class="sidenav"
+:class="`${!$store.state.darkTheme?'bg-white':'bg-dark-dark'}`"
+:style="{'box-shadow':$store.state.darkTheme?'0px 4px 8px':''}">
     <div class="nav-header-content">
         <div class="profile-data">
             <img src="/assets/images/avatars/profile_avatar.png" 
             class="profile-avatar"/>
             <div class="user-info-container">
-                <span class="nav-user-name">Bosun</span>
+                <span class="nav-user-name"
+                :style="{'color':$store.state.darkTheme?'#668194':''}">Bosun</span>
                 <span class="view-profile-link" @click="navigate(`/${status==='merchant'?'merchant':'driver'}/profile`)">View Profile</span>
             </div>
         </div>
@@ -20,9 +23,14 @@
             <span class="nav-link" @click="navigate(`/${status==='merchant'?'merchant':'driver'}/history`)">History</span>
         </div>
         <div class="link-item"
-        v-if="status==='driver'">
+        v-if="status==='merchant'">
             <Wallet />
-            <span class="nav-link" @click="navigate('/driver/wallet')">Wallet</span>
+            <span class="nav-link" @click="navigate('/merchant/wallet')">Wallet</span>
+        </div>
+
+        <div class="link-item">
+            <Bulb />
+            <span class="nav-link" @click="changeThemeMode">Theme</span>
         </div>
     </div>
     <div class="link-item" style="align-items: center;position: absolute;bottom: 2rem;">

@@ -1,4 +1,4 @@
-<div :class="`bg-light-light dark:bg-dark-dark overflow-hidden w-screen h-screen overflow-y-scroll`">
+<div :class="`${$store.state.darkTheme?'app-dark':'app-light'} overflow-hidden w-screen h-screen overflow-y-scroll`">
     <router-view v-slot="{ Component, route }">
         <transition
         :enter-active-class="route.meta.enterClass"

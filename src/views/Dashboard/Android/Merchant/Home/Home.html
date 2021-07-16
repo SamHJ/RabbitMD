@@ -1,6 +1,7 @@
 <div class="page h-screen flex flex-wrap content-center justify-center">
 
-    <div class="center-right-ellipse"></div>
+    <div class="center-right-ellipse"
+    :style="{'background':$store.state.darkTheme?'#44647c63':''}"></div>
 
     <HeaderBar active="merchanthome" @newTab="changeTab"/>
 
@@ -11,7 +12,9 @@
             <span class="next-job-timer"><Timer class="timer-vector" :fill="'#EB001B'"/> 00:59:22</span>
         </div>
 
-        <div class="col card-container">
+        <div class="col card-container"
+        :style="{'background':$store.state.darkTheme?'#030108':'#fff',
+        'box-shadow':$store.state.darkTheme?'0px 4px 8px':''}">
             <RouteIndicatorDriver @click="$router.push('/merchant/event-info')"/>
         </div>
 
@@ -26,7 +29,9 @@
             v-if="i!==0">
                 <span class="next-job-timer njt-future"><Timer class="timer-vector" :fill="'#335670'"/> 03:00:43</span>
             </div>
-            <div class="col card-container">
+            <div class="col card-container"
+            :style="{'background':$store.state.darkTheme?'#030108':'#fff',
+            'box-shadow':$store.state.darkTheme?'0px 4px 8px':''}">
                 <RouteIndicatorDriver @click="$router.push('/merchant/event-info')"/>
             </div>
         </div>
@@ -40,7 +45,9 @@
             <span class="next-job-timer"><Timer class="timer-vector" :fill="'#EB001B'"/> 00:59:22</span>
         </div>
 
-        <div class="col card-container">
+        <div class="col card-container"
+        :style="{'background':$store.state.darkTheme?'#030108':'#fff',
+        'box-shadow':$store.state.darkTheme?'0px 4px 8px':''}">
             <RouteIndicatorDriver @click="$router.push('/merchant/event-info')"/>
         </div>
 
@@ -55,7 +62,9 @@
             v-if="i!==0">
                 <span class="next-job-timer njt-future"><Timer class="timer-vector" :fill="'#335670'"/> 03:00:43</span>
             </div>
-            <div class="col card-container">
+            <div class="col card-container"
+            :style="{'background':$store.state.darkTheme?'#030108':'#fff',
+            'box-shadow':$store.state.darkTheme?'0px 4px 8px':''}">
                 <RouteIndicatorDriver @click="$router.push('/merchant/event-info')"/>
             </div>
         </div>

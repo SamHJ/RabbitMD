@@ -12,7 +12,11 @@ export default {
       if(to.name==='splash'){
         await StatusBar.setStyle({ style: Style.Dark });
       }else{
-        await StatusBar.setStyle({ style: Style.Light });
+        if(store.state.darkTheme){
+          await StatusBar.setStyle({ style: Style.Dark });
+        }else{
+          await StatusBar.setStyle({ style: Style.Light });
+        }
       }
     }
   },

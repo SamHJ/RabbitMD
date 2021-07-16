@@ -1,5 +1,8 @@
-<div class="dash-top-header col-auto bg-white mt-0 fixed w-full z-10 top-0">
-    <div class="top-ellipse" v-if="active!=='eventinfo'"></div>
+<div class="dash-top-header col-auto mt-0 fixed w-full z-10 top-0"
+:class="`${!$store.state.darkTheme?'bg-white':'bg-dark-dark'}`">
+
+    <div class="top-ellipse" v-if="active!=='eventinfo'"
+    :style="{'background':$store.state.darkTheme?'#44647c63':''}"></div>
 
     <SideBar v-if="showNav" @closeNav="closeNav"/>
 
@@ -20,10 +23,11 @@
     </div>
 
     <div class="row-nav" v-if="showHeaderSubSection('merchanthome')">
-        <!-- nav container -->
+        <!-- nav container-->
         <div class="h-42 row-grid-container">
 
             <div :class="`column h-42 ${active_tab===0?'bg-light-primary-light':''}`"
+            :style="{'background':$store.state.darkTheme&&active_tab===0?'#44647c63':''}"
             @click="setActiveTab(0)">
                 <div class="nav-content-group flex justify-center items-center">
                     <span class="nav-title-text w-22 text-center" :style="{'color':active_tab===0?'#0073C7':'#99ABB8'}">PICK UP</span>
@@ -33,6 +37,7 @@
             </div>
 
             <div :class="`column h-42 ${active_tab===1?'bg-light-primary-light':''}`"
+            :style="{'background':$store.state.darkTheme&&active_tab===1?'#44647c63':''}"
             @click="setActiveTab(1)">
                 <div class="nav-content-group flex justify-center items-center">
                     <span class="nav-title-text w-22 text-center" :style="{'color':active_tab===1?'#0073C7':'#99ABB8'}">DELIVERY</span>

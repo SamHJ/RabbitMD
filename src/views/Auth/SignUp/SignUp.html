@@ -1,6 +1,6 @@
 <div class="page h-screen flex flex-wrap content-center justify-center">
 
-    <div class="auth-nav-header col-auto bg-white mt-0 fixed w-full z-10 top-0"
+    <div class="auth-nav-header col-auto mt-0 fixed w-full z-10 top-0"
     :style="{'background':$store.state.darkTheme?'#030108':'#fff'}">
 
         <div class="row" style="text-align: -webkit-right;">
@@ -10,8 +10,7 @@
 
         <div class="row">
             <!-- rabbit blue logo -->
-            <RabbitWhite class="rabbit-white" v-if="$store.state.darkTheme"/>
-            <RabbitBlue class="rabbit-colored" v-if="!$store.state.darkTheme"/>
+            <RabbitBlue class="rabbit-colored"/>
         </div>
 
         <div class="row-nav" v-if="!signup_msg && !complete_signup">
@@ -20,6 +19,7 @@
             grid-template-columns: repeat(2, 1fr);width: auto ">
 
                 <div :class="`column h-42 ${active_tab===0?'bg-light-primary-light':''}`"
+                :style="{'background':$store.state.darkTheme&&active_tab===0?'#44647c63':''}"
                 @click="active_tab=0">
                     <div class="nav-content-group flex justify-center items-center">
                         <Driver class="flex-none w-10" :is_active="active_tab===0"/>
@@ -29,6 +29,7 @@
                 </div>
 
                 <div :class="`column h-42 ${active_tab===1?'bg-light-primary-light':''}`"
+                :style="{'background':$store.state.darkTheme&&active_tab===1?'#44647c63':''}"
                 @click="active_tab=1">
                     <div class="nav-content-group flex justify-center items-center">
                         <Merchant class="flex-none w-10" :is_active="active_tab===1"/>

@@ -1,6 +1,7 @@
 <div class="page h-screen flex flex-wrap content-center justify-center">
 
-    <div class="center-right-ellipse"></div>
+    <div class="center-right-ellipse"
+    :style="{'background':$store.state.darkTheme?'#44647c63':''}"></div>
 
     <HeaderBar active="profile" style="height:110px"/>
 
@@ -12,24 +13,32 @@
             class="user-vehicle"/>
         </div>
         <div style="display: grid;margin-top: 1rem;">
-            <span class="user-name">Ajadi Bosun</span>
-            <span class="user-location"><Location2 style="position: absolute;
+            <span class="user-name"
+            :style="{'color':$store.state.darkTheme?'#668194':''}">Ajadi Bosun</span>
+            <span class="user-location" :style="{'color':$store.state.darkTheme?'#668194':''}">
+                <Location2 style="position: absolute;
                 margin: auto;display: inline-flex;margin-left: -1rem;"/> Lagos, Nigeria</span>
         </div>
         <div>
             <div class="profile-item">
-                <span class="prop-title">Username</span>
-                <span class="prop-value">Bosun</span>
+                <span class="prop-title"
+                :style="{'color':$store.state.darkTheme?'#668194':''}">Username</span>
+                <span class="prop-value"
+                :style="{'color':$store.state.darkTheme?'#668194':''}">Bosun</span>
                 <div class="profile-item-hr"></div>
             </div>
             <div class="profile-item">
-                <span class="prop-title">Phone Number</span>
-                <span class="prop-value">08185654614</span>
+                <span class="prop-title"
+                :style="{'color':$store.state.darkTheme?'#668194':''}">Phone Number</span>
+                <span class="prop-value"
+                :style="{'color':$store.state.darkTheme?'#668194':''}">08185654614</span>
                 <div class="profile-item-hr"></div>
             </div>
             <div class="profile-item">
-                <span class="prop-title">Email</span>
-                <span class="prop-value">Ajadibosun12@gmail.com</span>
+                <span class="prop-title"
+                :style="{'color':$store.state.darkTheme?'#668194':''}">Email</span>
+                <span class="prop-value"
+                :style="{'color':$store.state.darkTheme?'#668194':''}">Ajadibosun12@gmail.com</span>
                 <div class="profile-item-hr"></div>
             </div>
         </div>

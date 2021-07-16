@@ -10,8 +10,10 @@ export const deviceInfo = async (): Promise<any> =>{
 
 export const backNavigation = (context:any)=>{
     App.addListener('backButton',(event)=>{
-        if(event.canGoBack && context.$store.state.currentRoute!=='splash') return context.$router.go(-1)
-        else return App.exitApp()
+        // setTimeout(() => {
+            if(event.canGoBack && context.$store.state.currentRoute!=='splash') return context.$router.go(-1)
+            else return App.exitApp()
+        // }, 1000);
     })
 }
 

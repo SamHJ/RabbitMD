@@ -16,3 +16,10 @@
   overflow: hidden;
   width: 100vw
 }
+
+.app-dark{
+  background: #030108!important;
+}
+.app-light{
+  background: #fff!important;
+}

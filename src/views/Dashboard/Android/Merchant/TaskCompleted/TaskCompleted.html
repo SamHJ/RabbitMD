@@ -1,15 +1,18 @@
 <div class="page h-screen flex flex-wrap content-center justify-center">
 
-    <div class="top-ellipse"></div>
+    <div class="top-ellipse"
+    :style="{'background':$store.state.darkTheme?'#44647c63':''}"></div>
 
-    <div class="center-right-ellipse"></div>
+    <div class="center-right-ellipse"
+    :style="{'background':$store.state.darkTheme?'#44647c63':''}"></div>
 
     <div class="success-container">
     
         <div>
             <img src="/assets/images/avatars/success_guy.png"
             style="padding-bottom: 3rem;">
-            <span class="completed-text">Completed</span>
+            <span class="completed-text"
+            :style="{'color':$store.state.darkTheme?'#668194':''}">Completed</span>
         </div>
         <div>
             <div class="completed-task-btn"

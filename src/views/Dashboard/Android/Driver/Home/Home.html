@@ -1,6 +1,7 @@
 <div class="page h-screen flex flex-wrap content-center justify-center">
 
-    <div class="center-right-ellipse"></div>
+    <div class="center-right-ellipse"
+    :style="{'background':$store.state.darkTheme?'#44647c63':''}"></div>
 
     <HeaderBar active="home"/>
 
@@ -11,7 +12,8 @@
             <span class="next-job-timer"><Timer class="timer-vector" :fill="'#EB001B'"/> 00:59:22</span>
         </div>
 
-        <div class="col card-container">
+        <div class="col card-container"
+        :class="`${!$store.state.darkTheme?'bg-white':'bg-dark-dark'}`">
             
             <RouteIndicator />
 

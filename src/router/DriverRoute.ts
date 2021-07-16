@@ -27,15 +27,6 @@ export const DriverRoute = [
         component: () => import(/* webpackChunkName: 'general'*/"@/views/Dashboard/Android/Driver/History/index.vue")
       },
       {
-        path: "/driver/wallet",
-        name: "driverwallet",
-        meta:{
-          enterClass: "animate__animated animate__fadeInRight",
-          leaveClass: "animate__animated animate__fadeOutLeft"
-        },
-        component: () => import(/* webpackChunkName: 'general'*/"@/views/Dashboard/Android/Driver/Wallet/index.vue")
-      },
-      {
         path: "/driver/profile",
         name: "driverprofile",
         meta:{
