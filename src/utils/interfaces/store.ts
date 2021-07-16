@@ -8,6 +8,7 @@ export interface RootState {
   token: string;
   geodata: Record<string, unknown>;
   version: string;
+  currentRoute: string;
 }
 
 export interface Commit {

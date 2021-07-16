@@ -63,3 +63,7 @@ export const STORE_TOKEN = (state: RootState, payload: string): void => {
 export const ONBOARDING_SHOWN = (state: RootState): void => {
   state.onboardingShown = true
 }
+
+export const STORE_CURRENT_ROUTE_NAME = (state: RootState, payload: string): void => {
+  state.currentRoute = payload;
+};

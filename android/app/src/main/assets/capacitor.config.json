@@ -2,12 +2,5 @@
 	"appId": "com.roqsoft.roqytok",
 	"appName": "RoqyTok",
 	"webDir": "dist",
-	"bundledWebRuntime": false,
-	"plugins": {
-		"SplashScreen": {
-			"launchShowDuration": 0,
-			"launchAutoHide": true,
-			"showDuration": 0
-		}
-	}
+	"bundledWebRuntime": false
 }

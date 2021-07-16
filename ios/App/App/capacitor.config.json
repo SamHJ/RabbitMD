@@ -1,6 +1,6 @@
 {
-	"appId": "com.roqsoft.eduroqworkers",
-	"appName": "eduroqworkers",
+	"appId": "com.roqsoft.roqytok",
+	"appName": "RoqyTok",
 	"webDir": "dist",
 	"bundledWebRuntime": false
 }

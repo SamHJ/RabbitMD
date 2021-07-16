@@ -9,4 +9,5 @@ export default {
   token: "",
   geodata: {},
   version: version,
+  currentRoute: ''
 };

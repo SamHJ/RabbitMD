@@ -38,3 +38,7 @@ export const storeToken = (
 export const onboardingShown = ({ commit }: Commit): void => {
   commit('ONBOARDING_SHOWN')
 }
+
+export const storeCurrentRouteName = ({ commit }: Commit,payload: string): void => {
+  commit("STORE_CURRENT_ROUTE_NAME", payload);
+};
